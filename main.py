@@ -29,9 +29,9 @@ print(f"Кількість днів між {date_string} і поточною д�
 
 import random
 
-def get_numbers_ticket(minimum, maximum, quantity):
+def get_numbers_ticket(min, max, quantity):
     # Перевірка коректності вхідних параметрів
-    if not (1 <= minimum <= maximum <= 1000) or not (1 <= quantity <= maximum - minimum + 1):
+    if not (1 <= min <= max <= 1000) or not (1 <= quantity <= max - min + 1):
         return []
 
     # Використання множини для забезпечення унікальності чисел
@@ -39,7 +39,7 @@ def get_numbers_ticket(minimum, maximum, quantity):
 
     while len(unique_numbers) < quantity:
         # Додавання випадкового числа у заданому діапазоні
-        unique_numbers.add(random.randint(minimum, maximum))
+        unique_numbers.add(random.randint(min, max))
 
     # Повернення відсортованого списку унікальних чисел
     return sorted(list(unique_numbers))
